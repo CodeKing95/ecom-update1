@@ -79,3 +79,4 @@ export default defineConfig([
 # MyEcommerceUpdate
 # MyEcommerceUpdate2
 # EcommerceSite
+# NewEcom
