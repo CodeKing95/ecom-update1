@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid md:grid-cols-4 pb-10 pt-5 gap-10">
 
-          {/* Company details */}
+          
           <div className="py-4 px-2">
             <a className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl" href="#">
               Tech Stars
@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Footer links */}
+          {/* Footer */}
           <div>
             <h1 className="text-xl font-bold mb-3">Important Links</h1>
             <ul className="space-y-3">
@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter Section */}
+          {/* Newsletter */}
           <div>
             <h1 className="text-xl font-bold mb-3">Newsletter</h1>
             <p className="text-gray-600 mb-3">Subscribe to get latest tech updates 📬</p>

@@ -13,7 +13,7 @@ const ProductsData = [
     img: Img1,
     title: "iPhone 17",
     description: "Most powerful iPhone ever",
-    price: 1299, // 👈 ADD PRICE
+    price: 1299, // ADD PRICE
   },
   {
     id: 2,

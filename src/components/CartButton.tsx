@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+/* Here comes the cart button for adding products */
+
+
 const CartButton = () => {
   const navigate = useNavigate();
   const totalQuantity = useSelector((state: any) => state.cart.totalQuantity);

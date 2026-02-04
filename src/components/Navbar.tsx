@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({
           {/* Search + Cart + Mobile Menu */}
           <div className="flex items-center gap-3">
 
-            {/* Search */}
+            
             <div className="relative hidden sm:block w-72">
               <input
                 type="text"
@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
               <IoMdSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500" />
 
-              {/* 🔽 SEARCH DROPDOWN */}
+              {/* 🔽 DROPDOWN */}
               {showDropdown && searchTerm && filteredProducts.length > 0 && (
                 <ul className="absolute top-full mt-2 w-full bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto z-50">
                   {filteredProducts.slice(0, 6).map((product) => (
@@ -118,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* 📱 MOBILE MENU */}
+        {/* 📱 MOBILE */}
         {menuOpen && (
           <div className="lg:hidden pb-4">
             <div className="flex flex-col gap-4 mt-2">
