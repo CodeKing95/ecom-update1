@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Category from "./components/Category";
 import Category2 from "./components/Category2";
@@ -20,6 +22,7 @@ import { ProductsData } from "./components/Products";
 import ProductDetails from "./pages/ProductDetails";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "./types/database.types";
+
 
 const supabase = createClient<Database>(
   import.meta.env.VITE_SUPABASE_URL,
@@ -42,7 +45,7 @@ const BannerData = {
 type Product = Database["public"]["Tables"]["products"]["Row"];
 
 const App = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [, setProducts] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -79,36 +82,6 @@ const App = () => {
   }
 
   
-  async function updateProduct(id: string, updates: Partial<Product>) {
-    const { data, error } = await supabase
-      .from("products")
-      .update(updates)
-      .eq("id", id)
-      .select();
-
-    if (error) {
-      console.error(error);
-    } else if (data && data.length > 0) {
-      setProducts((prev) =>
-        prev.map((p) => (p.id === id ? data[0] : p))
-      );
-    }
-  }
-
-  
-  async function deleteProduct(id: string) {
-    const { error } = await supabase
-      .from("products")
-      .delete()
-      .eq("id", id);
-
-    if (error) {
-      console.error(error);
-    } else {
-      setProducts((prev) => prev.filter((p) => p.id !== id));
-    }
-  }
-
   return (
     <>
       <Navbar
@@ -116,8 +89,6 @@ const App = () => {
        setSearchTerm={setSearchTerm}
        products={ProductsData}
        addProduct={addProduct}
-       updateProduct={updateProduct}
-       deleteProudct={deleteProduct}
        />
       <Toaster position="top-center" reverseOrder={false} />
 
@@ -145,8 +116,9 @@ const App = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/order-summary" element={<OrderSummary />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-
-
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>}/>
+        
       </Routes>
     </>
   );

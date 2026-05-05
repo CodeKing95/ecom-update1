@@ -7,14 +7,24 @@ import { useNavigate } from "react-router-dom";
 const MenuLinks = [
   { id: 1, name: "Home", link: "/#" },
   { id: 2, name: "Shop", link: "/#shop" },
-  { id: 3, name: "About", link: "/#about" },
+  { id: 3, name: "About", link: "/about" },
   { id: 4, name: "Blogs", link: "/#blog" },
+   {id: 5, name: "Testimonials", link: "/#testimonials"},
+  { id: 6, name: "Contact", link: "/contact"},
+ 
 ];
 
 interface NavbarProps {
   searchTerm: string;
   setSearchTerm: (value: string) => void;
   products: Product[];
+
+   addProduct: (newProduct: {
+    title: string;
+    price: number;
+    image: string;
+  }) => Promise<void>;
+
 }
 
 const Navbar: React.FC<NavbarProps> = ({

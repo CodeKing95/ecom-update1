@@ -225,7 +225,7 @@ const Products: React.FC<ProductsProps> = ({ searchTerm }) => {
   
 
   return (
-    <div className="container">
+    <div id="shop" className="container">
       <Heading title="Our Products" subtitle="Explore Our Products" />
       <ProductCard data={filteredProducts} onAddToCart={handleAddToCart} />
     </div>
